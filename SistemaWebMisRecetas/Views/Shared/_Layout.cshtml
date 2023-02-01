@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/css/main.css" rel="stylesheet" type="text/css" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <header>
+        <div><h1>Mis recetas</h1></div>
+        <div>
+            <nav>
+                <div>@Html.ActionLink("Inicio", "Index", "Receta")</div>
+                <div>@Html.ActionLink("Recetas", "Index", "Receta")</div>
+                
+                
+            </nav>
+        </div>
+    </header>
+
+    <div id="main">
+
+        <div class="content">
+            @RenderBody()
+        </div>
+    <aside id="sidebarImgs">
+        @if (IsSectionDefined("SideBar"))
+        {
+            @RenderSection("SideBar")
+        }
+       
+    </aside>
+
+    </div>
+
+    <footer >
+        <h2>misrecetas@valentinomartinez.com</h2>
+    </footer>
+</body>
+</html>

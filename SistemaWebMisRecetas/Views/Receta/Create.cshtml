@@ -1,0 +1,61 @@
+﻿@model SistemaWebMisRecetas.Models.Receta
+
+
+@{
+    ViewData["Title"] = "Detalle Receta";
+}
+
+<h1>Ingresar un nuevo medico</h1>
+@using (Html.BeginForm("Create", "Receta", FormMethod.Post))
+{
+    <p>
+        @Html.LabelFor(model => model.Nombre)
+        @Html.TextBoxFor(model => model.Nombre)
+        @Html.ValidationMessageFor(model => model.Nombre)
+    </p>
+
+    <p>
+        @Html.LabelFor(model => model.Categoria)
+        @Html.TextBoxFor(model => model.Categoria)
+        @Html.ValidationMessageFor(model => model.Categoria)
+    </p>
+
+    <p>
+        @Html.LabelFor(model => model.Ingredientes)
+        @Html.TextBoxFor(model => model.Ingredientes)
+        @Html.ValidationMessageFor(model => model.Ingredientes)
+    </p>
+
+    <p>
+        @Html.LabelFor(model => model.Instrucciones)
+        @Html.TextBoxFor(model => model.Instrucciones)
+        @Html.ValidationMessageFor(model => model.Instrucciones)
+    </p>
+
+    <p>
+        @Html.LabelFor(model => model.Autor)
+        @Html.TextBoxFor(model => model.Autor)
+        @Html.ValidationMessageFor(model => model.Autor)
+    </p>
+
+    <p>
+        @Html.LabelFor(model => model.Apellido)
+        @Html.TextBoxFor(model => model.Apellido)
+        @Html.ValidationMessageFor(model => model.Apellido)
+    </p>
+        <p>
+        @Html.LabelFor(model => model.Edad)
+        @Html.TextBoxFor(model => model.Edad)
+        @Html.ValidationMessageFor(model => model.Edad)
+    </p>
+        <p>
+        @Html.LabelFor(model => model.Email)
+        @Html.TextBoxFor(model => model.Email)
+        @Html.ValidationMessageFor(model => model.Email)
+    </p>
+
+
+
+    <input type="submit" action="Create" />
+    @Html.ActionLink("Volver al Index", "Index", "Receta")
+}

@@ -53,6 +53,11 @@ height: 90vh;
     
 }
 
+.side {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
 
 #sidebarTexto {
     background-color: #c2c2c3;

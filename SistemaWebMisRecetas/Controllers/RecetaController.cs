@@ -77,7 +77,60 @@ namespace SistemaWebMisRecetas.Controllers
             return View(receta);
         }
 
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            Receta receta = TraerUna(id);
+            return View("Edit", receta);
+        }
 
+        [HttpPost]
+        [ActionName("Edit")]
+        public ActionResult EditConfirmed(int id, Receta receta)
+        {
+            if (id != receta.Id)
+            {
+                return NotFound();
+            }
+            else
+            {
+                context.Entry(receta).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+        }
+
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            Receta receta = context.Recetas.Find(id);
+            if (receta == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return View("Delete", receta);//Devuelve el hmlt(View) al cliente
+            }
+        }
+
+        //Post opera/delete/1
+        [HttpPost]
+        [ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Receta receta = TraerUna(id);
+            if (receta == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                context.Recetas.Remove(receta);
+                context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+        }
 
 
         private Receta TraerUna(int id)

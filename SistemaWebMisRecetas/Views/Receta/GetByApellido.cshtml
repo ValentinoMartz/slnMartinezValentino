@@ -61,4 +61,21 @@
 
 
     }
-</table> 
+</table>
+
+
+
+@section SideBar
+    {
+    <div class="side">
+        @foreach (var item in Model)
+        {
+            <p> ID : @Html.DisplayFor(modelItem=>item.Id)</p>
+
+            @Html.ActionLink("Eliminar", "Delete", "Receta", new{id=item.Id})
+
+            @Html.ActionLink("Editar", "Edit", "Receta", new{id=item.Id})
+
+        }
+    </div>
+    }

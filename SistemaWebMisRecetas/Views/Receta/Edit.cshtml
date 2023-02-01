@@ -2,11 +2,11 @@
 
 
 @{
-    ViewData["Title"] = "Detalle Receta";
+    ViewData["Title"] = "Editar Receta";
 }
 
 <h1>Ingresar un nuevo medico</h1>
-@using (Html.BeginForm("Create", "Receta", FormMethod.Post))
+@using (Html.BeginForm("Edit", "Receta", FormMethod.Post))
 {
     <p>
         @Html.LabelFor(model => model.Nombre)
@@ -43,12 +43,12 @@
         @Html.TextBoxFor(model => model.Apellido)
         @Html.ValidationMessageFor(model => model.Apellido)
     </p>
-        <p>
+    <p>
         @Html.LabelFor(model => model.Edad)
         @Html.TextBoxFor(model => model.Edad)
         @Html.ValidationMessageFor(model => model.Edad)
     </p>
-        <p>
+    <p>
         @Html.LabelFor(model => model.Email)
         @Html.TextBoxFor(model => model.Email)
         @Html.ValidationMessageFor(model => model.Email)

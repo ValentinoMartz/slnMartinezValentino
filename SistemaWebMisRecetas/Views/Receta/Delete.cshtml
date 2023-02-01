@@ -1,0 +1,49 @@
+﻿@model SistemaWebMisRecetas.Models.Receta
+
+@{
+    ViewData["Title"] = "Borrar Receta";
+}
+
+
+<h2>Id del empleado: @Model.Id</h2>
+<p>Desea eliminar esta receta de la base de datos?</p>
+
+@using (Html.BeginForm("Delete", "Receta", FormMethod.Post))
+{
+
+    <div>
+        <span>@Html.DisplayNameFor(model => model.Nombre)</span>
+        <span>@Html.DisplayFor(model => model.Nombre)</span>
+    </div>
+
+    <div>
+        <span>@Html.DisplayNameFor(model => model.Ingredientes)</span>
+        <span>@Html.DisplayFor(model => model.Ingredientes)</span>
+    </div>
+
+    <div>
+        <span>@Html.DisplayNameFor(model => model.Categoria)</span>
+        <span>@Html.DisplayFor(model => model.Categoria)</span>
+    </div>
+
+    <div>
+        <span>@Html.DisplayNameFor(model => model.Autor)</span>
+        <span>@Html.DisplayFor(model => model.Autor)</span>
+    </div>
+
+    <div>
+        <span>@Html.DisplayNameFor(model => model.Apellido)</span>
+        <span>@Html.DisplayFor(model => model.Apellido)</span>
+    </div>
+
+    <input type="submit" action="Delete" />
+}
+
+@section SideBar
+    {
+    <div >
+
+        @Html.ActionLink("Volver", "Index", "Receta")
+
+    </div>
+    }

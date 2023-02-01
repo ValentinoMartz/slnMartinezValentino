@@ -11,7 +11,7 @@ namespace SistemaWebMisRecetas.Validations
 
         public override bool IsValid(object value)
         {
-            if (value.ToString() != "desayuno") {
+            if (value.ToString() != "desayuno" || value.ToString() != "Desayuno") {
                 return false;
             }
             return true;

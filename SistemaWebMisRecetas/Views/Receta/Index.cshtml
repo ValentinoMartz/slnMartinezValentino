@@ -28,7 +28,7 @@
                 @Html.DisplayFor(modelItem=>item.Id)
             </td>
             <td>
-                @Html.DisplayFor(modelItem=>item.Nombre)
+                @Html.ActionLink(item.Nombre,"Details","Receta",new{id=item.Id })
             </td>
             <td>
                 @Html.DisplayNameFor(modelItem=>item.Categoria)
@@ -40,10 +40,12 @@
                 @Html.DisplayFor(modelItem=>item.Instrucciones)
             </td>
             <td>
-                @Html.DisplayFor(modelItem=>item.Autor)
+                @Html.ActionLink(item.Autor,"GetByAutor","Receta",new{Autor=item.Autor })
+
             </td>
             <td>
-                @Html.DisplayFor(modelItem=>item.Apellido)
+                @Html.ActionLink(item.Apellido,"GetByApellido","Receta",new{Apellido=item.Apellido })
+
             </td>
             <td>
                 @Html.DisplayFor(modelItem=>item.Edad)
